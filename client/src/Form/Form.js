@@ -49,12 +49,11 @@ class Form extends Component {
             <label className="form__label label">
               Enter your text:
             </label>
-           <textarea value={this.state.value} onChange={this.handleValueChange} />
+           <textarea rows="50" className="form__textarea textarea"  value={this.state.value} onChange={this.handleValueChange} />
             <label className="form__label label">
               Or Enter your URL:
             </label>
              <input type="url" value={this.state.url} onChange={this.handleUrlChange} />
-             <textarea rows="50" className="form__textarea textarea" value={this.state.value} onChange={this.handleChange} />
             <input className="form__button button button_deep-blue" type="submit" value="Submit" />
           </form>
         </div>
