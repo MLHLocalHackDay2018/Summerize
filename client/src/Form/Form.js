@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './Header.css';
+import './Form.css';
 
 class Form extends Component {
     constructor(props) {
@@ -23,12 +23,12 @@ class Form extends Component {
     
       render() {
         return (
-          <form onSubmit={this.handleSubmit}>
-            <label>
+          <form className="app__form form" onSubmit={this.handleSubmit}>
+            <label className="form__label label">
               Enter your text:
-              <textarea value={this.state.value} onChange={this.handleChange} />
             </label>
-            <input type="submit" value="Submit" />
+             <textarea className="form__textarea textarea" value={this.state.value} onChange={this.handleChange} />
+            <input className="form__button button" type="submit" value="Submit" />
           </form>
         );
       }
