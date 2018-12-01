@@ -1,5 +1,41 @@
+.form-wrapper {
+    width: 60%;
+    margin: auto;
+    padding: 4em 0;
+    max-width: 1200px;
+}
+
 .form {
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
 }
+
+.form__label {
+    text-align: left;
+    margin-bottom: 2em;
+}
+
+.form__textarea {
+    height: 100px;
+    max-height: 100px;  
+    margin-bottom: 2em;
+}
+
+.form__button {
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    margin: auto;
+    background-color:#191BA9;
+    border: none;
+    padding: 1em;
+    width: 200px;
+    color: white;
+}
+
+.form__button:hover {
+    background-color:#191BA9;
+    border: none;
+    width: 200px;
+}
+

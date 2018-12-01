@@ -26,13 +26,15 @@ class Form extends Component {
     
       render() {
         return (
+        <div className="app__form-wrapper form-wrapper">
           <form className="app__form form" onSubmit={this.handleSubmit}>
             <label className="form__label label">
               Enter your text:
             </label>
-             <textarea className="form__textarea textarea" value={this.state.value} onChange={this.handleChange} />
-            <input className="form__button button" type="submit" value="Submit" />
+             <textarea rows="50" className="form__textarea textarea" value={this.state.value} onChange={this.handleChange} />
+            <input className="form__button button button_deep-blue" type="submit" value="Submit" />
           </form>
+        </div>
         );
       }
 }
