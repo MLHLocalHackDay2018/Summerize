@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './Header.css';
+import './Form.css';
 
 class Form extends Component {
     constructor(props) {
@@ -44,17 +44,20 @@ class Form extends Component {
     
       render() {
         return (
-          <form onSubmit={this.handleSubmit}>
-            <label>
+        <div className="app__form-wrapper form-wrapper">
+          <form className="app__form form" onSubmit={this.handleSubmit}>
+            <label className="form__label label">
               Enter your text:
-              <textarea value={this.state.value} onChange={this.handleValueChange} />
             </label>
-            <label>
+           <textarea value={this.state.value} onChange={this.handleValueChange} />
+            <label className="form__label label">
               Or Enter your URL:
-              <input type="url" value={this.state.url} onChange={this.handleUrlChange} />
             </label>
-            <input type="submit" value="Submit" />
+             <input type="url" value={this.state.url} onChange={this.handleUrlChange} />
+             <textarea rows="50" className="form__textarea textarea" value={this.state.value} onChange={this.handleChange} />
+            <input className="form__button button button_deep-blue" type="submit" value="Submit" />
           </form>
+        </div>
         );
       }
 }
