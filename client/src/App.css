@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -9,7 +11,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 7em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,4 +31,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.form-wrapper {
+  min-height: 80%;
 }
