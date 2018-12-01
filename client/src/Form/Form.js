@@ -5,22 +5,40 @@ class Form extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          value: 'Please write an essay about your favorite DOM element.'
+          value: '',
+          url: '',
         };
     
-        this.handleChange = this.handleChange.bind(this);
+        this.handleValueChange = this.handleValueChange.bind(this);
+        this.handleUrlChange = this.handleUrlChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
     
-      handleChange(event) {
+      handleValueChange(event) {
         this.setState({value: event.target.value});
+      }
+
+      handleUrlChange(event) {
+        this.setState({url: event.target.value});
       }
     
       handleSubmit(event) {
         //alert('An essay was submitted: ' + this.state.value);
-        postData('/api/summarize', {text: this.state.value})
-        .then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
-        .catch(error => console.error(error));
+        if (this.state.value !== '' && this.state.url === '') {
+          console.log(this.state.value);
+          postData('/api/summarize', {text: this.state.value})
+          .then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
+          .catch(error => console.error(error));
+        } 
+        else if (this.state.url !== '' && this.state.value === '') {
+          console.log(this.state.url);
+          postData('/api/summarizeurl', {url: this.state.url})
+          .then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
+          .catch(error => console.error(error));
+        }
+        else if (this.state.url !== '' && this.state.value !== '') {
+          alert('Please enter either text or a URL not both.');
+        }
         event.preventDefault();
       }
     
@@ -31,6 +49,11 @@ class Form extends Component {
             <label className="form__label label">
               Enter your text:
             </label>
+           <textarea value={this.state.value} onChange={this.handleValueChange} />
+            <label className="form__label label">
+              Or Enter your URL:
+            </label>
+             <input type="url" value={this.state.url} onChange={this.handleUrlChange} />
              <textarea rows="50" className="form__textarea textarea" value={this.state.value} onChange={this.handleChange} />
             <input className="form__button button button_deep-blue" type="submit" value="Submit" />
           </form>
