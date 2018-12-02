@@ -39,7 +39,7 @@ app.post("/api/summarizeurl", (req, res) => {
   		url: url
   	}).then(data => {
   		var $ = cheerio.load(data);
-  		var num = 5;
+  		var num = 2;
 		if(req.body.num && parseInt(req.body.num) >= 1)
 			num = parseInt(req.body.num);
 
@@ -54,7 +54,7 @@ app.post("/api/summarize", (req, res) => {
   	return res.send("[ERROR] Missing field 'text'");
 
   var text = req.body.text;
-  var num = 5;
+  var num = 2;
   if(req.body.num && parseInt(req.body.num) >= 1)
   	num = parseInt(req.body.num);
 
