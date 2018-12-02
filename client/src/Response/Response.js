@@ -14,17 +14,18 @@ class Response extends Component {
                 <div className="results__summary">
                     <p className="summary__text text ">{this.props.result.summary}</p>
                 </div>
-                <div className="results__related">
-                    <h1 className="related__heading">Related links:</h1>
-                    <div className="related__item">
-                        <span className="item__name">Name biding: </span>
-                        <a href="/" className="item__link">Wikipedia URL</a>
+                <div className="results__meta">
+                    <div className="results__related">
+                        <h3 className="related__heading">References:</h3>
+                        <ul className="related__refs">
+                            <li className="refs__item"> <a href="/" className="item__link">Name biding</a></li>
+                        </ul>
                     </div>
+                    <ul className="results__tags">
+                        <li className="tags__keyword">Wikipedia</li>
+                        <li className="tags__keyword">PHP</li>
+                    </ul>
                 </div>
-                <ul className="results__tags">
-                    <li className="tags__keyword">Wikipedia</li>
-                    <li className="tags__keyword">PHP</li>
-                </ul>
             </div>
         );
     }
