@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Response.css';
 
 class Response extends Component {
     constructor(props) {
@@ -31,6 +32,7 @@ class Response extends Component {
                         </ul>
                     </div>
                     <ul className="results__tags">
+                    	<h3 className="tags__heading">Related Tags:</h3>
                         {this.props.result.keyPhrases.map(keyPhrase => 
                             <li className="tags__keyword">{keyPhrase}</li>
                         )}

@@ -55,6 +55,7 @@ class Form extends Component {
       render() {
         return (
         <div className="app__form-wrapper form-wrapper">
+          <h1 className="Title">Summerize</h1>
           <form className="app__form form" onSubmit={this.handleSubmit}>
             <label className="form__label label">
               Enter your text:

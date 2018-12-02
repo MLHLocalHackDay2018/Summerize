@@ -1,8 +1,7 @@
 .form-wrapper {
-    width: 60%;
     margin: auto;
     padding: 1em 0;
-    max-width: 1200px;
+    width: 75%;
 }
 
 .form {
