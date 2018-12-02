@@ -30,7 +30,7 @@ class Form extends Component {
           postData('/api/summarize', {text: this.state.value})
           .then(data => {
             console.log(JSON.stringify(data));
-            result = JSON.stringify(data);
+            result = data;
             this.props.handleApiRequest(result);
           }) // JSON-string from `response.json()` call
           .catch(error => console.error(error));
@@ -40,7 +40,8 @@ class Form extends Component {
           postData('/api/summarizeurl', {url: this.state.url})
           .then(data => {
             console.log(JSON.stringify(data));
-            result = JSON.stringify(data);
+            console.log(data);
+            result = data;
             this.props.handleApiRequest(result);
           }) // JSON-string from `response.json()` call
           .catch(error => console.error(error));

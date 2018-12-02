@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Header from './Header/Header';
 import Form from './Form/Form';
+import Response from './Response/Response';
 
 class App extends Component {
   constructor(props) {
@@ -30,11 +30,21 @@ class App extends Component {
     );
   }
 
+  renderResponse() {
+    return (
+      <Response
+        result = {this.state.result}
+      />
+    );
+  }
+
+
   render() {
     return (
       <div className="App">
         <Header />
         {this.renderForm()}
+        {this.renderResponse()}
       </div>
     );
   }
