@@ -24,16 +24,25 @@ class Form extends Component {
     
       handleSubmit(event) {
         //alert('An essay was submitted: ' + this.state.value);
+        let result;
         if (this.state.value !== '' && this.state.url === '') {
           console.log(this.state.value);
           postData('/api/summarize', {text: this.state.value})
-          .then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
+          .then(data => {
+            console.log(JSON.stringify(data));
+            result = JSON.stringify(data);
+            this.props.handleApiRequest(result);
+          }) // JSON-string from `response.json()` call
           .catch(error => console.error(error));
         } 
         else if (this.state.url !== '' && this.state.value === '') {
           console.log(this.state.url);
           postData('/api/summarizeurl', {url: this.state.url})
-          .then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
+          .then(data => {
+            console.log(JSON.stringify(data));
+            result = JSON.stringify(data);
+            this.props.handleApiRequest(result);
+          }) // JSON-string from `response.json()` call
           .catch(error => console.error(error));
         }
         else if (this.state.url !== '' && this.state.value !== '') {
