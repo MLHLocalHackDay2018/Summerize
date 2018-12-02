@@ -14,11 +14,11 @@ class Response extends Component {
         if (isEmpty(this.props.result)) {
             return '';
         }
-
+        var summary = this.props.result.summary.replace("\n", "");
         return (
             <div className="app__results">
                 <div className="results__summary">
-                    <p className="summary__text text ">{this.props.result.summary}</p>
+                    <p className="summary__text text ">{summary.split('\n').map((item, key) => { return <span key={key}>{item}<br/><br/></span> })}</p>
                 </div>
                 <div className="results__meta">
                     <div className="results__related">
