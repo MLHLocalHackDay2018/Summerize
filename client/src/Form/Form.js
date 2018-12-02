@@ -62,7 +62,7 @@ class Form extends Component {
             <label className="form__label label">
               Or Enter your URL:
             </label>
-             <input type="url" value={this.state.url} onChange={this.handleUrlChange} />
+             <input className="form__input input" type="url" value={this.state.url} onChange={this.handleUrlChange} />
             <input className="form__button button button_deep-blue" type="submit" value="Submit" />
           </form>
         </div>

@@ -1,7 +1,7 @@
 .form-wrapper {
     width: 60%;
     margin: auto;
-    padding: 4em 0;
+    padding: 1em 0;
     max-width: 1200px;
 }
 
@@ -12,7 +12,7 @@
 
 .form__label {
     text-align: left;
-    margin-bottom: 2em;
+    margin-bottom:1rem;
 }
 
 .form__textarea {
@@ -21,21 +21,32 @@
     margin-bottom: 2em;
 }
 
+.form__input:focus, .form__textarea:focus {
+    box-shadow: 4px 4px 0 #14CC7F;
+    border: 1px solid #7D57B2;
+    outline: none;
+}
+
+.form__input {
+    border: 1px solid rgb(169, 169, 169);
+}
+
 .form__button {
     text-align: center;
     cursor: pointer;
     font-size: 18px;
+    font-family: Muli;
     margin: auto;
-    background-color:#191BA9;
-    border: none;
     padding: 1em;
     width: 200px;
-    color: white;
+    margin-top:1em;
+    background: #FFF;
+    box-shadow: 4px 4px 0 #14CC7F;
+    border: 1px solid #7D57B2;
 }
 
 .form__button:hover {
-    background-color:#191BA9;
-    border: none;
-    width: 200px;
+    background: #7D57B2;
+    color: #FFF;
+    box-shadow: 0 0 0 #14CC7F;
 }
-
