@@ -1,7 +1,21 @@
+.title {
+  margin-bottom:1.25em;
+  color: #fff;
+  background: linear-gradient(to bottom right, #191BA9, #7D57B2);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  display: inline-block;
+}
+
 .App {
   text-align: center;
   display: flex;
   flex-direction: column;
+  font: 400 1.8rem/1.6 Muli, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+* {
+  transition: color .3s ease, background .3s ease, box-shadow .3s ease;
 }
 
 .App-logo {
